@@ -3,7 +3,7 @@ const frameCanvas = document.getElementById("canvas");
 const ctx = frameCanvas.getContext("2d");
 const scanButton = document.getElementById("start-btn");
 const statusMsg = document.getElementById("status");
-const resultContainer = document.getElementById("result=box");
+const resultContainer = document.getElementById("result-box");
 const resultOutput = document.getElementById("result-text");
 
 let scanning = false;
@@ -18,7 +18,7 @@ function startScanner() {
         .then(function (stream) {
             cameraFeed.srcObject = stream;
             cameraFeed.setAttribute("playsinline", true);
-            cameraFeed.onplay();
+            cameraFeed.play();
             scanning = true;
             scanButton.disabled = true;
             scanButton.textContent = "Scanning...";
